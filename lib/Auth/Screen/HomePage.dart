@@ -1,4 +1,4 @@
-import 'package:spring_button/spring_button.dart';
+
 
 import 'package:negarit/libs.dart';
 
@@ -73,8 +73,7 @@ class HomePage extends StatelessWidget {
                 scaleCoefficient: 0.9,
                 useCache: false,
                 onTap: () {
-                  BlocProvider.of<AuthBloc>(context, listen: false)
-                      .add(Loading());
+                  // BlocProvider.of<AuthBloc>(context, listen: false) .add(Loading());
                 },
               ),
               const Spacer(
