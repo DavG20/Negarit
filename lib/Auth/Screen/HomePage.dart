@@ -1,5 +1,3 @@
-
-
 import 'package:negarit/libs.dart';
 
 class HomePage extends StatelessWidget {
@@ -77,7 +75,7 @@ class HomePage extends StatelessWidget {
                 },
               ),
               const Spacer(
-                flex: 2,
+                flex: 1,
               ),
               SpringButton(
                 SpringButtonType.OnlyScale,

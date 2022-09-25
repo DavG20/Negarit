@@ -8,7 +8,10 @@ class UserRegistration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Registration Page")),
+      appBar: AppBar(
+        title: const Text("Registration Page"),
+      ),
+      body: Center(child: Text("welocme")),
     );
   }
 }

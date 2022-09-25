@@ -1,5 +1,5 @@
 name: negarit
-description: A new Flutter project.
+description: Negarit Simple WebSocket Chat App
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -39,6 +39,7 @@ dependencies:
   spring_button: ^2.0.0
   flutter_bloc: ^8.1.1
   equatable: ^2.0.5
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:

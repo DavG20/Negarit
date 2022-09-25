@@ -1,23 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:negarit/Auth/Screen/HomePage.dart';
+import 'package:negarit/Wrapper.dart';
+
+import 'libs.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
-  runApp(const MyApp());
-}
+  final AuthRepo authRepo = AuthRepo(
+    authDataProvider: AuthDataProvider(httpClient: http.Client()),
+  );
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: HomePage(),
-    );
-  }
+  runApp(Wrapper(authRepo: authRepo));
 }

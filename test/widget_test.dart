@@ -7,13 +7,20 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:negarit/Auth/Data_Provider/Auth_Data_Provider.dart';
+import 'package:negarit/Auth/Repository/Repo.dart';
+import 'package:negarit/Wrapper.dart';
+import 'package:http/http.dart' as http;
 
 import 'package:negarit/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(Wrapper(
+      authRepo: AuthRepo(
+          authDataProvider: AuthDataProvider(httpClient: http.Client())),
+    ));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
