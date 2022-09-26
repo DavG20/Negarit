@@ -71,7 +71,9 @@ class HomePage extends StatelessWidget {
                 scaleCoefficient: 0.9,
                 useCache: false,
                 onTap: () {
-                  // BlocProvider.of<AuthBloc>(context, listen: false) .add(Loading());
+                  // BlocProvider.of<AuthBloc>(context, listen: false)
+                  //     .add(Loading());
+                  Navigator.of(context).pushNamed(LoginPage.routeName);
                 },
               ),
               const Spacer(

@@ -32,7 +32,7 @@ class AuthModel {
 
   Map<String, dynamic> toJson() => {
         "userid": userid,
-        "phone": email,
+        "email": email,
         "username": username,
         "userProfile": userProfile,
         "bio": bio
