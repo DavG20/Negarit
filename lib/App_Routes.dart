@@ -9,7 +9,7 @@ class AppRoute {
       return MaterialPageRoute(builder: ((context) => HomePage()));
     }
     if (routeSettings.name == UserRegistration.routeName) {
-      return MaterialPageRoute(builder: (context) => UserRegistration());
+      return MaterialPageRoute(builder: (context) =>const UserRegistration());
     } else {
       return MaterialPageRoute(builder: ((context) => HomePage()));
     }

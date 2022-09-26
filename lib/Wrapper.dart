@@ -8,7 +8,7 @@ class Wrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RepositoryProvider.value(
-      value: this.authRepo,
+      value: authRepo,
       child: BlocProvider(
         create: (context) => AuthBloc(authRepo: authRepo)..add(Loading()),
         child: AnnotatedRegion<SystemUiOverlayStyle>(
