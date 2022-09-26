@@ -5,7 +5,7 @@ class AuthEvent extends Equatable {
   List<Object?> get props => [];
 }
 
-class TheLoad extends AuthEvent {}
+class AuthLoad extends AuthEvent {}
 
 class Loading extends AuthEvent {
   List<Object> get props => [];

@@ -7,6 +7,8 @@ class AuthState extends Equatable {
 // State os authentications
 class AuthLoading extends AuthState {}
 
+class TheLoading extends AuthState {}
+
 class AuthIntialized extends AuthState {}
 
 class Authenticated extends AuthState {
