@@ -35,7 +35,7 @@ class RegistrationInProgress extends AuthState {}
 
 class RegistrationSuccess extends AuthState {
   final String message;
-  RegistrationSuccess({required this.message});
+  RegistrationSuccess({this.message});
 
   List<Object> get props => [message];
 }
@@ -47,7 +47,7 @@ class LogingInPage extends AuthState {}
 class LogingInFailed extends AuthState {
   final String message;
 
-  LogingInFailed({required this.message});
+  LogingInFailed({this.message});
 
   List<Object> get props => [message];
 }
@@ -60,7 +60,7 @@ class ForgatePasswordInProgres extends AuthState {}
 class ForgatePasswordFailed extends AuthState {
   final String message;
 
-  ForgatePasswordFailed({required this.message});
+  ForgatePasswordFailed({this.message});
 
   List<Object> get props => [message];
 }

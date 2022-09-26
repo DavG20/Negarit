@@ -3,7 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:negarit/libs.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  
 
   @override
   State<LoginPage> createState() => _LoginPageState();

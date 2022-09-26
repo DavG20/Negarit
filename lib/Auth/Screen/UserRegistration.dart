@@ -1,7 +1,7 @@
 import 'package:negarit/libs.dart';
 
 class UserRegistration extends StatelessWidget {
-  const UserRegistration({super.key});
+ 
 
   static const routeName = "auth/userregister";
 

@@ -3,7 +3,7 @@ import 'package:negarit/libs.dart';
 class Wrapper extends StatelessWidget {
   final AuthRepo authRepo;
 
-  const Wrapper({required this.authRepo}) : assert(authRepo != null);
+  const Wrapper({this.authRepo});
 
   @override
   Widget build(BuildContext context) {
