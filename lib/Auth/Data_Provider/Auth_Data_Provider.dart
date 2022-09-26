@@ -22,7 +22,7 @@ class AuthDataProvider {
   }
 
   // remove token from shared preference
-  Future<bool> removeTokenFromSharedPreference(String token) async {
+  Future<bool> removeTokenFromSharedPreference() async {
     final pref = await SharedPreferences.getInstance();
     bool isremoved = await pref.remove("token");
     return isremoved;
@@ -71,7 +71,7 @@ class AuthDataProvider {
         },
         body: jsonEncode(
           <String, dynamic>{
-            "phone": authModel.email,
+            "email": authModel.email,
             "username": authModel.username,
             "password": authModel.password,
             "userProfile": data["pic"],
@@ -92,7 +92,7 @@ class AuthDataProvider {
 
   Future<bool> userLogoutCheck() async {
     String tn = await getTokenFromSharedPreference();
-    bool state = await removeTokenFromSharedPreference(tn);
+    bool state = await removeTokenFromSharedPreference();
     if (state) {
       return true;
     } else {
@@ -117,7 +117,7 @@ class AuthDataProvider {
         AuthModel userModel = AuthModel(
           userid: user["userid"],
           username: user["username"],
-          email: user["phone"],
+          email: user["email"],
           userProfile: user["userProfile"],
           bio: user["bio"],
         );
@@ -152,6 +152,63 @@ class AuthDataProvider {
       }
     } catch (e) {
       return [false, "error login"];
+    }
+  }
+
+  Future<bool> forgatePasswordSendEmail(String email) async {
+    try {
+      final response = await httpClient.post(
+        Uri.parse("$_baseUrl/password/forgotSendEmail"),
+        headers: <String, String>{
+          "Content-Type": "application/json; charset:UTF-8",
+        },
+        body: jsonEncode(
+          <String, dynamic>{
+            "email": email,
+          },
+        ),
+      );
+      if (response.statusCode == 200) {
+        String message = jsonDecode(response.body)["message"];
+        if (message == "success") {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    } catch (e) {
+      return false;
+    }
+  }
+
+  Future<bool> forgatePasswordChange(
+      String email, String password, String newPassword) async {
+    try {
+      final response = await httpClient.post(
+        Uri.parse("$_baseUrl/password/change"),
+        headers: <String, String>{
+          "Content-Type": "application/json; charset:UTF-8",
+        },
+        body: jsonEncode(
+          <String, dynamic>{
+            "email": email,
+            "password": password,
+            "newpassword": newPassword,
+          },
+        ),
+      );
+      if (response.statusCode == 200) {
+        String message = jsonDecode(response.body)["message"];
+        if (message == "success") {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    } catch (e) {
+      return false;
     }
   }
 }
