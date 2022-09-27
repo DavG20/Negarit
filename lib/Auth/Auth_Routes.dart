@@ -12,9 +12,38 @@ class _AuthRoutesState extends State<AuthRoutes> {
       body: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
           if (state is AuthLoading) {
-            return  LoginPage();
-          } else {
-            return const SnackBar(content: Text("Login Faild"));
+            return UserRegistration();
+          }
+          if (state is LogingInPage) {
+            return LoginPage();
+          }
+          if (state is LogingInPage ||
+              state is LogingInProgress ||
+              state is LogingInFailed ||
+              state is LogingInPage) {
+            return LoginPage();
+          }
+
+          if (state is ForgatePasswordPage ||
+              state is ForgatePasswordSuccess ||
+              state is ForgatePasswordFailed ||
+              state is ForgatePassswordTempCodeSent ||
+              state is ForgatePasswordInProgres) {
+            return LoginPage();
+          }
+
+          // if (state is Authenticated) {
+          //   final RegisterRepository registerRepository = RegisterRepository(
+          //     dataProvider: RegisterDataProvider(
+          //       httpClient: http.Client(),
+          //     ),
+          //   );
+          //   return Register(
+          //     registerRepository: registerRepository,
+          //   );
+          // }
+          else {
+            return LoginPage();
           }
         },
       ),

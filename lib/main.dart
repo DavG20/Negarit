@@ -1,4 +1,3 @@
-import 'package:negarit/Wrapper.dart';
 
 import 'libs.dart';
 import 'package:http/http.dart' as http;

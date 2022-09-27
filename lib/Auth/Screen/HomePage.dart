@@ -72,7 +72,7 @@ class HomePage extends StatelessWidget {
                 useCache: false,
                 onTap: () {
                   // BlocProvider.of<AuthBloc>(context, listen: false)
-                  //     .add(Loading());
+                  //     .add(LogingIn());
                   Navigator.of(context).pushNamed(LoginPage.routeName);
                 },
               ),

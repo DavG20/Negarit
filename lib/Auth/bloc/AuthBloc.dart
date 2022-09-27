@@ -7,10 +7,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   @override
   Stream<AuthState> mapEventToState(AuthEvent event) async* {
-    if (event is Loading) {
+    if (event is AuthLoad) {
       yield AuthLoading();
       Future.delayed(const Duration(seconds: 2));
-      try {} catch (e) {}
+      try {
+        yield LogingInPage();
+      } catch (e) {}
     }
 
     if (event is AuthIntialize) {
@@ -20,13 +22,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       yield LogingInPage();
     }
 
-    if (event is AuthLogin) {
-      yield LogingInProgress();
+    // if (event is LogingIn) {
+    //   yield LogingInProgress();
 
-      try {} catch (e) {
-        yield LogingInFailed(message: "Error Loging ");
-      }
-    }
+    //   try {} catch (e) {
+    //     yield LogingInFailed(message: "Error Loging ");
+    //   }
+    // }
 
     if (event is AuthLogOut) {
       yield TheLoading();

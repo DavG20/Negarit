@@ -4,3 +4,4 @@ export 'Auth/Models/Model.dart';
 export 'Auth/Screen/screen.dart';
 export 'Auth/Auth_Routes.dart';
 export 'App_Routes.dart';
+export 'Wrapper.dart';

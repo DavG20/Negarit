@@ -7,21 +7,17 @@ class AuthEvent extends Equatable {
 
 class AuthLoad extends AuthEvent {}
 
-class Loading extends AuthEvent {
-  List<Object> get props => [];
-}
-
 class AuthIntialize extends AuthEvent {
   List<Object> get props => [];
 }
 
 class AuthLogin extends AuthEvent {
-  final String username;
+  final String email;
   final String password;
 
-  AuthLogin(this.username, this.password);
+  AuthLogin({this.email, this.password});
 
-  List<Object> get props => [username, password];
+  List<Object> get props => [email, password];
 }
 
 class LogingIn extends AuthEvent {}
