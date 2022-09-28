@@ -1,3 +1,4 @@
+import 'package:negarit/Auth/Screen/Welcome_Loader.dart';
 import 'package:negarit/libs.dart';
 
 class AuthRoutes extends StatefulWidget {
@@ -12,7 +13,7 @@ class _AuthRoutesState extends State<AuthRoutes> {
       body: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
           if (state is AuthLoading) {
-            return UserRegistration();
+            return WelcomeLaoder();
           }
           if (state is LogingInPage) {
             return LoginPage();

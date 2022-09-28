@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
     Pattern pattern =
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
     RegExp regExp = RegExp(pattern);
-    return (regExp.hasMatch(email) ? true : false);
+    return (!regExp.hasMatch(email) ? false : true);
   }
 
   @override
@@ -46,8 +46,8 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    key: _formglobalkey,
                     child: Form(
+                      key: _formglobalkey,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -55,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 10),
                             child: Text(
-                              "LogIn",
+                              "LOGIN",
                               style: TextStyle(
                                   fontSize: 30,
                                   color: Colors.grey[900],
@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                               validator: (val) {
                                 if (val.isEmpty) {
                                   return "Empty Filed";
-                                } else if (validateEmail(val)) {
+                                } else if (!validateEmail(val)) {
                                   return "Invalid Email";
                                 } else {
                                   return null;

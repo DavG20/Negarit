@@ -7,3 +7,5 @@ export 'package:http/http.dart';
 export 'package:flutter/services.dart';
 export 'dart:convert';
 export 'package:shared_preferences/shared_preferences.dart';
+export 'package:flutter_spinkit/flutter_spinkit.dart';
+export 'package:bloc/bloc.dart';

@@ -5,7 +5,10 @@ class AuthEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class AuthLoad extends AuthEvent {}
+class AuthLoad extends AuthEvent {
+  @override
+  List<Object> get props => [];
+}
 
 class AuthIntialize extends AuthEvent {
   List<Object> get props => [];
@@ -43,8 +46,8 @@ class ForgatePasswordEmial extends AuthEvent {
 }
 
 class ForgatePasswordChange extends AuthEvent {
-  final String email, password, recode;
-  ForgatePasswordChange({this.email, this.password, this.recode});
+  final String email, password, newpassword;
+  ForgatePasswordChange({this.email, this.password, this.newpassword});
 
-  List<Object> get props => [email, password, recode];
+  List<Object> get props => [email, password, newpassword];
 }

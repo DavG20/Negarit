@@ -10,7 +10,7 @@ class Wrapper extends StatelessWidget {
     return RepositoryProvider.value(
       value: authRepo,
       child: BlocProvider(
-        create: (context) => AuthBloc(authRepo: authRepo)..add(LogingIn()),
+        create: (context) => AuthBloc(authRepo: authRepo)..add(AuthLoad()),
         child: AnnotatedRegion<SystemUiOverlayStyle>(
           value: SystemUiOverlayStyle.light,
           child: MaterialApp(
