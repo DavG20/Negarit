@@ -3,7 +3,7 @@ import 'package:negarit/libs.dart';
 
 class AuthDataProvider {
   final http.Client httpClient;
-  static const _baseUrl = "http://localhost:5000";
+  static const _baseUrl = "http://localhost:8080";
 
   AuthDataProvider({@required this.httpClient});
 

@@ -5,6 +5,7 @@ class AuthModel {
   final String password;
   final String userProfile;
   final String bio;
+  final String createdOn;
   // final String lastSeen;
   // final bool online;
 
@@ -15,6 +16,7 @@ class AuthModel {
     this.username,
     this.userProfile,
     this.bio,
+    this.createdOn,
     // required this.lastSeen,
     // required this.online
   });
